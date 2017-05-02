@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="cis436mn.project3.MainActivity">
+
+    <TextView
+        android:id="@+id/messageHeader"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Message:"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        android:layout_marginTop="32dp"
+        android:layout_below="@+id/highestNotifHeader"
+        android:layout_alignStart="@+id/highestNotifHeader" />
+
+    <TextView
+        android:id="@+id/countHeader"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_alignStart="@+id/highestNotifHeader"
+        android:layout_marginTop="32dp"
+        android:text="Time to Count Down:"
+        android:textSize="18sp"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/highestNotifHeader"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Highest Notification:"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        android:layout_marginTop="18dp"
+        android:layout_below="@+id/setButton"
+        android:layout_alignParentStart="true"
+        android:layout_marginStart="11dp" />
+
+    <EditText
+        android:id="@+id/timeIn"
+        android:layout_width="175dp"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/countHeader"
+        android:layout_alignBottom="@+id/countHeader"
+        android:layout_alignParentEnd="true"
+        android:ems="10"
+        android:hint="Time in Seconds"
+        android:inputType="number"
+        android:textAlignment="center" />
+
+    <EditText
+        android:id="@+id/messageIn"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/messageHeader"
+        android:layout_alignBottom="@+id/messageHeader"
+        android:layout_alignStart="@+id/startButton"
+        android:layout_toEndOf="@+id/messageHeader"
+        android:ems="10"
+        android:hint="Type Message Here"
+        android:inputType="text" />
+
+    <Button
+        android:id="@+id/startButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/messageIn"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="15dp"
+        android:text="Start Countdown" />
+
+    <Button
+        android:id="@+id/setButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_below="@+id/timeIn"
+        android:onClick="btnStart_Service_onClick"
+        android:text="Set Count Down" />
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="200dp"
+        android:layout_height="100dp"
+        android:text="Please Note: Valid Inputs are from 5 to 120 seconds.  Input must be divisible by 5. Any other inputs will prompt a retry."
+        android:textAlignment="center"
+        android:textAllCaps="false"
+        android:layout_above="@+id/highestNotifHeader"
+        android:layout_centerHorizontal="true" />
+
+    <Spinner
+        android:id="@+id/highestNotifSpinner"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/highestNotifHeader"
+        android:layout_alignEnd="@+id/setButton"
+        android:layout_toEndOf="@+id/highestNotifHeader" />
+</RelativeLayout>
